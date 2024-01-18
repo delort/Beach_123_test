@@ -14,8 +14,7 @@
                    x:Name="bleDevice"/>
             <Label Text="Services"/>
             <!-- The list below shows the services available on the selected BLE device -->
-            <ListView x:Name="foundBleServs"
-                      ItemTapped="FoundBleServs_ItemTapped" />
+            <ListView x:Name="foundBleServs"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

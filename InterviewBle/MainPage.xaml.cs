@@ -80,17 +80,16 @@ namespace InterviewBle
 
             if (selectedItem.State == DeviceState.Connected)
             {
-                await Navigation.PushAsync(new DeviceDetails(selectedItem));
+               await Navigation.PushModalAsync(new NavigationPage(new DeviceDetails(selectedItem)));
             }
             else
             {
                 try
                 {
-                    var connectParameters = new ConnectParameters(false, true);
-                    await _bluetoothAdapter.ConnectToDeviceAsync(selectedItem, connectParameters);          
-                    await Navigation.PushAsync(new DeviceDetails(selectedItem));
+                    var connectParameters = new ConnectParameters(true, true);
+                    await Navigation.PushModalAsync(new NavigationPage(new DeviceDetails(selectedItem)));
                 }
-                catch
+                catch(Exception ex)
                 {
                     await DisplayAlert("Error connecting", $"Error connecting to BLE device: {selectedItem.Name ?? "N/A"}", "Retry");
                 }

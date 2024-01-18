@@ -41,15 +41,6 @@ namespace InterviewBle
             {
                 await DisplayAlert("Error initializing", $"Error initializing UART GATT service.", "OK");
             }
-        }
-        //To delete
-        private async void FoundBleServs_ItemTapped(object sender, ItemTappedEventArgs e)    
-        {
-           /* var selectedService = _servicesList[e.ItemIndex];
-            if (selectedService != null)                   
-            {
-                await Navigation.PushAsync(new BtCharPage(_connectedDevice, selectedService));
-            }*/
-        }
+        } 
     }
 }

@@ -19,7 +19,6 @@ namespace InterviewBle.Droid.Services
 
         static IBluetoothLE CreateImplementation()
         {
-
             var implementation = new BleImplementation();
             implementation.Initialize();
             return implementation;
